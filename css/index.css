@@ -1,0 +1,131 @@
+@import url("./sanitize.css");
+@import url("https://fonts.googleapis.com/css?family=Heebo:300&display=swap");
+
+:root {
+  --black: #111111;
+  --white: #fff;
+  --red: #e74c3c;
+  --bg-color: initial;
+  --font-color: initial;
+  --hand-width: 4px;
+  --hand-initial-angle: 90deg;
+}
+
+:root[data-theme="dark"] {
+  --bg-color: var(--black);
+  --font-color: var(--white);
+}
+
+:root[data-theme="light"] {
+  --bg-color: var(--white);
+  --font-color: var(--black);
+}
+
+.app {
+  min-width: 375px;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  padding: 20px;
+  font-family: "Heebo", sans-serif;
+  transition: 0.3s background-color;
+}
+
+.app,
+.clock {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.theme-toggler-btn {
+  background-color: var(--font-color);
+  color: var(--bg-color);
+  padding: 7px;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: "Heebo", sans-serif;
+  transition: 0.3s all;
+  margin-bottom: 48px;
+}
+
+.clock {
+  width: 100vw;
+  max-width: 360px;
+  height: 100vw;
+  max-height: 360px;
+  border-radius: 9191998px;
+  position: relative;
+  rotate: 90deg;
+  transition: 0.3s background-color;
+}
+
+.clock-hand {
+  display: inline-block;
+  height: var(--hand-width);
+  background-color: var(--font-color);
+  position: absolute;
+}
+
+.clock-hand-minutes,
+.clock-hand-seconds,
+.clock-hand-hours {
+  transform: rotate(var(--hand-initial-angle)) translateX(-50%);
+}
+
+.clock-hand-minutes,
+.clock-hand-seconds {
+  width: 45%;
+}
+
+.clock-hand-hours {
+  width: 30%;
+}
+
+.clock-hand-seconds {
+  background-color: var(--red);
+}
+
+.clock-hand-center {
+  display: inline-block;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: calc(var(--hand-width) * 0.65) solid var(--red);
+  z-index: 10;
+  background-color: var(--font-color);
+  border-radius: 50%;
+}
+
+.clock-details {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  line-height: 1.5;
+  color: var(--font-color);
+  letter-spacing: 0.3px;
+  transition: 0.3s all;
+}
+
+.clock-time {
+  font-size: 56px;
+}
+
+.clock-date {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.clock-date-day {
+  display: inline-block;
+  background-color: var(--font-color);
+  border-radius: 50%;
+  color: var(--bg-color);
+  min-width: 20px;
+  line-height: 1.25;
+  padding: 2px 4px;
+  min-height: 20px;
+}

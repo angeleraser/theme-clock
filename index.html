@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html data-theme="dark" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <title>Theme Clock</title>
+  </head>
+  <body class="app">
+    <button id="theme-btn" class="theme-toggler-btn">Switch theme</button>
+
+    <div class="clock">
+      <span class="clock-hand-center"></span>
+      <span data-clock-hand="hours" class="clock-hand clock-hand-hours"></span>
+      <span data-clock-hand="seconds" class="clock-hand clock-hand-seconds"></span>
+      <span data-clock-hand="minutes" class="clock-hand clock-hand-minutes"></span>
+    </div>
+
+    <div class="clock-details">
+      <span id="clock-time" class="clock-time"></span>
+      <span id="clock-date" class="clock-date">
+      </span>
+    </div>
+
+    <script type="module" src="./js/index.js"></script>
+  </body>
+</html>
