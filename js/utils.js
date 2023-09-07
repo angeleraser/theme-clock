@@ -74,6 +74,6 @@ export function getDate() {
   return {
     month: months[date.getMonth()],
     day: date.getDate(),
-    weekDay: weekDays[date.getDay()],
+    weekDay: weekDays[date.getDay() - 1],
   };
 }
