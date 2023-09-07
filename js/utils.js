@@ -45,13 +45,13 @@ export function getTime({ format } = { format: 12 }) {
 }
 
 const weekDays = [
+  "Sunday",
   "Monday",
   "Tuesday",
   "Wednesday",
   "Thursday",
   "Friday",
   "Saturday",
-  "Sunday",
 ];
 
 const months = [
@@ -74,6 +74,6 @@ export function getDate() {
   return {
     month: months[date.getMonth()],
     day: date.getDate(),
-    weekDay: weekDays[date.getDay() - 1],
+    weekDay: weekDays[date.getDay()],
   };
 }
